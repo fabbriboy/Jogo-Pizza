@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1ybh0kygu4ay"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_p5gy6"]
+[ext_resource type="PackedScene" uid="uid://4jsqsqyucyj1" path="res://jamv.tscn" id="2_0s83v"]
+[ext_resource type="Texture2D" uid="uid://b1nnjdlta5ksu" path="res://CRVascodaGama.png" id="3_hssgc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_128xw"]
+size = Vector2(346, 422)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_p5gy6")
+item_scene = ExtResource("2_0s83v")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(556, 538)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_128xw")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("3_hssgc")
